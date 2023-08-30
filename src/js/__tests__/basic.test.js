@@ -1,7 +1,12 @@
-import sum from '../basic';
+import calcHealthPoint from "../basic";
 
-test('health point', () => {
-  const result = 0
+test.each([
+  ['мечник', 10],
+  ['маг', 100],
+  ['лучник', 80]
+])('testing function with health point character with %c character %h health',(character,healthPoint,expected) => {
+  const result = calcHealthPoint(healthPoint)
 
-  expect(result).toBe(0);
-});
+  expect(result).toBe(expected);
+})
+
