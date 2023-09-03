@@ -3,6 +3,16 @@ const characters = [
   {name: 'маг', health: 100},
   {name: 'лучник', health: 80},
 ]
-export default function calcHealthPoint({...heroes}) {
-  return heroes.name && heroes.health >= 50 ? 'healthy' : heroes.health > 15 && heroes.health < 50 ? 'wounded' : 'critical';
+export default function calcHealthPoint(health) {
+  console.log(health)
+  if (health >= 50) {
+    return 'healthy';
+  } else {
+    if (health > 15 && health < 50) {
+      return 'wounded';
+    } else {
+      return 'critical';
+    }
+
+  }
 }
